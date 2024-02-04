@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>own tailwind css</title>
+    <!-- <script src="./app1.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="./test/letcss.js"></script>
+  </head>
+  <body class="bg-gradient-to-b from-purple-400/50 to-blue-400/50">
+    <nav class="bg-gradient-to-l">
+      <div
+        class="container mx-auto flex justify-between items-center p-4 text-white"
+      >
+        <a href="#" class="uppercase text-lg">logo</a>
+
+        <ul class="flex gap-6 uppercase text-sm">
+          <li>
+            <a href="#">home</a>
+          </li>
+          <li>
+            <a href="#">about</a>
+          </li>
+          <li>
+            <a href="#">contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container mx-auto pt-32 pb-60 set('flex-gap-col')">
+        <p class="let('flex-gap-col','flex,flex-col,gap-4') hidden">123</p>
+
+        <h1 class="set('title-h2',add('text-white'))">hero title h1</h1>
+        <p
+          class="let('title-p','bg-blue-500,text-white,px-6,py-2,w-fit,rounded-full')"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+          nihil ex recusandae <br />
+          atque autem cum dolor numquam libero corporis dicta!
+        </p>
+
+        <div>
+          <button
+            class="set('btn',remove('bg-blue-500,text-white'),add('bg-yellow-500,text-black'))"
+          >
+            about
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container mx-auto my-10">
+        <div class="grid gap-6 grid-cols-2 p-10">
+          <div class="grid justify-items-center">
+            <img
+              src="https://images.unsplash.com/photo-1598214886806-c87b84b7078b?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="image"
+              class="w-1/2"
+            />
+          </div>
+
+          <div class="set('flex-gap-col')">
+            <h2 class="let('title-h2','text-3xl,font-semibold')">
+              title with h2
+            </h2>
+
+            <p
+              class="set('title-p',remove('bg-blue-500'),add('bg-gradient-to-r,from-indigo-500'))"
+            >
+              some title related text here. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Deleniti, cum?
+            </p>
+
+            <div>
+              <button
+                class="let('btn','uppercase,rounded-2xl,px-10,py-2,bg-blue-500,text-white')"
+              >
+                read more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container mx-auto my-10">
+        <div class="grid gap-6 grid-cols-2 shadow-lg p-10 bg-white rounded-2xl">
+          <div class="set('flex-gap-col')">
+            <h2 class="set('title-h2')">title with h2</h2>
+
+            <p
+              class="set('title-p',remove('bg-blue-500'),add('text-gray-900,bg-gradient-to-r,from-purple-300'))"
+            >
+              some title related text here. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Deleniti, cum?
+            </p>
+
+            <div>
+              <button class="set('btn')">read more</button>
+            </div>
+          </div>
+
+          <div class="grid justify-items-center">
+            <img
+              src="https://media.istockphoto.com/id/1237066179/photo/stack-of-delicious-classical-homemade-pancakes-with-strawberries-and-blueberries-on-blue.webp?s=170667a&w=0&k=20&c=vbUIAWHO1Dg5LWD8RkwRTh9RDRhsDmOEdy2b2soB4qE="
+              alt="image"
+              class="w-1/2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
