@@ -10,10 +10,9 @@ function let(...params) {
 }
 function set(...params) {
   let [varName, ...restArr] = params;
-
-  itmG.classList.add(
-    ...varsArr.filter((obj) => obj.vars == varName)[0].classes
-  );
+  varName.split(",").forEach((vn) => {
+    itmG.classList.add(...varsArr.filter((obj) => obj.vars == vn)[0].classes);
+  });
 
   restArr.forEach((obj) => {
     if (obj.fnName == "remove") {
