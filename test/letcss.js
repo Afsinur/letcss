@@ -36,6 +36,17 @@ function remove(str) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  function setItmGlobalCreateFunctionAndRemoveClass(cls, itm) {
+    itmG = itm;
+
+    try {
+      let setVarsClass = new Function(cls);
+      setVarsClass();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function loadLetCss(setterPrefix = "let", variablePrefix = "set") {
     let allElement = document.querySelectorAll("*");
 
@@ -43,10 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
     allElement.forEach((itm) => {
       Array.from(itm.classList).forEach((cls) => {
         if (cls.includes(setterPrefix)) {
-          itmG = itm;
-
-          let setVarsClass = new Function(cls);
-          setVarsClass();
+          setItmGlobalCreateFunctionAndRemoveClass(cls, itm);
         }
       });
     });
@@ -54,16 +62,11 @@ window.addEventListener("DOMContentLoaded", () => {
     allElement.forEach((itm) => {
       Array.from(itm.classList).forEach((cls) => {
         if (cls.includes(variablePrefix)) {
-          itmG = itm;
-
-          let setVarsClass = new Function(cls);
-          setVarsClass();
+          setItmGlobalCreateFunctionAndRemoveClass(cls, itm);
         }
       });
     });
   }
-
-  loadLetCss();
 
   function watchForAnyChanges() {
     const targetElement = document.querySelectorAll("*");
@@ -90,5 +93,6 @@ window.addEventListener("DOMContentLoaded", () => {
     startMe();
   }
 
+  loadLetCss();
   watchForAnyChanges();
 });
