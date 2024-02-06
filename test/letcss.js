@@ -13,12 +13,14 @@ function let(...params) {
       varsArr.push({ vars, classes });
     }
   } else {
-    let classes = Array.from(str).filter(
-      (itm) => !itm.includes(setterPrefixGlobal)
-    );
+    if (!varsArr.some((obj) => obj.vars == vars)) {
+      let classes = Array.from(str).filter(
+        (itm) => !itm.includes(setterPrefixGlobal)
+      );
 
-    itmG.classList.add(...classes);
-    varsArr.push({ vars, classes });
+      itmG.classList.add(...classes);
+      varsArr.push({ vars, classes });
+    }
   }
 }
 function set(...params) {
