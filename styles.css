@@ -9,3 +9,14 @@
   background-position: center;
   background-size: cover;
 }
+
+nav {
+  & ul {
+    display: flex;
+    gap: 40px;
+
+    & a {
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,12 +1,25 @@
 let varsArr = [];
 let itmG = null;
+let setterPrefixGlobal = null;
 
 function let(...params) {
   let [vars, str] = params;
-  let classes = str.split(",");
 
-  itmG.classList.add(...classes);
-  varsArr.push({ vars, classes });
+  if (typeof str == "string") {
+    if (!varsArr.some((obj) => obj.vars == vars)) {
+      let classes = str.split(",");
+
+      itmG.classList.add(...classes);
+      varsArr.push({ vars, classes });
+    }
+  } else {
+    let classes = Array.from(str).filter(
+      (itm) => !itm.includes(setterPrefixGlobal)
+    );
+
+    itmG.classList.add(...classes);
+    varsArr.push({ vars, classes });
+  }
 }
 function set(...params) {
   let [varName, ...restArr] = params;
@@ -23,6 +36,8 @@ function set(...params) {
       itmG.classList.add(...obj.clsArr);
     }
   });
+
+  return itmG.classList;
 }
 function add(str) {
   let clsArr = str.split(",");
@@ -48,6 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function loadLetCss(setterPrefix = "let", variablePrefix = "set") {
+    setterPrefixGlobal = setterPrefix;
     let allElement = document.querySelectorAll("*");
 
     //let()
