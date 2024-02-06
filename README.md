@@ -1,4 +1,7 @@
 "# letcss"
+
+go here for documentation: https://letcss.netlify.app/
+
 #we can set classes for a var using: let()
 store multiple classes
 let('var-name','class-1,class-2')
