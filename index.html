@@ -8,10 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./styles.css" />
 
-    <script src="./test/letcss.js"></script>
+    <script src="./test/letcss-v6.js"></script>
     <script src="./js/app.js" defer></script>
   </head>
   <body
     class="bg-gradient-to-b from-purple-200/50 to-blue-200/50 min-h-[100vh]"
-  ></body>
+  >
+    <p class="let('title-1','bg-gray-500') mt-4">123</p>
+    <p class="let('title-2','text-blue-500') border border-red-500">123</p>
+    <p class="let('title-3', set('title-2 title-1')) m-5">123</p>
+    <p class="mb-4" data-fst>123</p>
+  </body>
 </html>
