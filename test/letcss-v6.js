@@ -208,7 +208,7 @@ function loadLetCss(setterPrefix = "let", variablePrefix = "set") {
       runSet();
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 }
 function watchForAnyChanges() {

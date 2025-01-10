@@ -84,7 +84,7 @@ function setItmGlobalCreateFunctionAndRemoveClass(cls, itm) {
     let setVarsClass = new Function(cls);
     setVarsClass();
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 }
 function loadLetCss(setterPrefix = "let", variablePrefix = "set") {
